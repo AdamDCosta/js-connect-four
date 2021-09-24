@@ -1,0 +1,28 @@
+@use "../Base/variables" as *;
+@use "../Base/mixins" as *;
+
+.intro {
+  
+  background-color: $color-white;
+  
+  &__heading {
+    font-family: $font-intro;
+    color: $color-teal;
+    font-size: 4rem;
+    transform: rotate(-30deg);
+    text-align: center;
+    line-height: 1;
+    
+  }
+  
+  
+  &__desc {
+    font-family: $font-text;
+    color: $color-orange;
+    text-align: center;
+    line-height: 1.75;
+  }
+  
+  
+  
+}

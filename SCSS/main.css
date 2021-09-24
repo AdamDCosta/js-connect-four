@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .intro {
   width: 100%;
   height: 100vh;
@@ -10,4 +19,41 @@
 
 .hide-intro {
   display: none;
+}
+
+.intro {
+  background-color: #FFF8E5;
+}
+.intro__heading {
+  font-family: "Bungee Shade", cursive;
+  color: #00A19D;
+  font-size: 4rem;
+  transform: rotate(-30deg);
+  text-align: center;
+  line-height: 1;
+}
+.intro__desc {
+  font-family: "Bungee", cursive;
+  color: #FFB344;
+  text-align: center;
+  line-height: 1.75;
+}
+
+.intro__button {
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 2rem;
+  background-color: #E05D5D;
+  color: #FFF8E5;
+  font-family: "Bungee", cursive;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #FFB344;
+  }
+  100% {
+    background-color: #E05D5D;
+  }
 }
