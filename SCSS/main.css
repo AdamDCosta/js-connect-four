@@ -110,7 +110,22 @@
   border: 1px solid #00A19D;
   border-radius: 50%;
   background-color: #00A19D;
-  color: black;
+}
+.game__area--playerone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #00A19D;
+  border-radius: 50%;
+  background-color: #E05D5D;
+}
+.game__area--playertwo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #00A19D;
+  border-radius: 50%;
+  background-color: #FFB344;
 }
 .game__current-player {
   font-family: "Bungee", cursive;

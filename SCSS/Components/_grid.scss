@@ -47,7 +47,25 @@
       border: 1px solid $color-teal;
       border-radius: 50%;
       background-color: $color-teal;
-      color: black;
+      
+    }
+
+    &--playerone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $color-teal;
+      border-radius: 50%;
+      background-color: $color-red;
+    }
+
+    &--playertwo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $color-teal;
+      border-radius: 50%;
+      background-color: $color-orange;
     }
     
   }
