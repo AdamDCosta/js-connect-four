@@ -32,8 +32,17 @@ class Game {
     let cell = document.createElement("div") 
     gameArea.appendChild(cell).className = "game__area--cell game__area--cell" + i;
     }
-
 }
+
+  firstTurn() {
+    this.cells.forEach(cell => {
+      square.addEventListener("click", () => {
+        this.handlePlayersTurn(cell)
+        this.checkWin();
+        })
+    })
+  }
+
 }
 const game = new Game(gridHTML)
 
