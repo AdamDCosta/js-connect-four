@@ -25,7 +25,9 @@ class Game {
     })
   }
 
-  createGrid(){ 
+  createGrid(rows, cols){ 
+    gameArea.style.setProperty("grid-template-rows", "repeat(" + rows + ", 1fr)");
+    gameArea.style.setProperty("grid-template-columns", "repeat(" + cols + ", 1fr)");
     for ( let i = 0; i < 42; i++ ) { 
     let cell = document.createElement("div") 
     gameArea.appendChild(cell).className = "game__area--cell game__area--cell" + i;
@@ -36,4 +38,4 @@ class Game {
 const game = new Game(gridHTML)
 
 game.startGame();
-game.createGrid();
+game.createGrid(7, 6);
