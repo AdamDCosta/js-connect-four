@@ -2,10 +2,10 @@
 @use "../Base/mixins" as *;
 
 
-:root {
-  --grid-cols: 1;
-  --grid-rows: 1;
-}
+// :root {
+//   --grid-cols: 1;
+//   --grid-rows: 1;
+// }
 
 .game {
 
@@ -30,50 +30,42 @@
     
   
     &--cell {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $color-teal;
-      border-radius: 50%;
       background-color: $color-white;
-      color: black;
+      
       
     } 
 
     &--block {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $color-teal;
-      border-radius: 50%;
       background-color: $color-teal;
       
     }
 
     &--playerone {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $color-teal;
-      border-radius: 50%;
+      
       background-color: $color-red;
     }
-
+    
     &--playertwo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $color-teal;
-      border-radius: 50%;
+      
       background-color: $color-orange;
     }
-    
+
+
   }
 
+  
   &__current-player {
     font-family: $font-text;
     color: $color-teal;
     padding: 20px auto;
   }
+  
+}
 
+.game__area div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $color-teal;
+  border-radius: 50%;
 }

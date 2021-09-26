@@ -55,7 +55,7 @@ class Game {
     this.cells.forEach(gridCell => {
       gridCell.addEventListener("click", () => {
         
-        console.log("boom")
+        // console.log("boom")
         this.handlePlayersTurn(gridCell)
         // this.checkWin();
         })
@@ -63,24 +63,32 @@ class Game {
   }
 
   handlePlayersTurn(clickedCell) {
-    if (clickedCell.textContent) {
+
+    if (clickedCell.classList != "game__area--cell") {
+      console.log(clickedCell)
       return;
     }
+  
     
     if (this.isPlayerOnesTurn )  {
-      clickedCell.textContent = "X";
+      clickedCell.classList.remove("game__area--cell")
+      clickedCell.classList.add("game__area--playerone")
+      console.log(clickedCell)
       this.isPlayerOnesTurn = false;
       this.isPlayerTwosTurn = true;
+      gamePlayer.innerHTML = "Player Two"
     }
+
     else {
-        clickedCell.textContent = "O";
+      clickedCell.classList.remove("game__area--cell")
+      clickedCell.classList.add("game__area--playertwo")
         this.isPlayerOnesTurn = true;
         this.isPlayerTwosTurn = false;
+        gamePlayer.innerHTML = "Player One"
       
     }
-  }
-
   
+  }
 }
 
 const game = new Game(gridHTML)
