@@ -1,2 +1,15 @@
 @use "../Base/variables" as *;
-@use "../Base/mixins" as *
+@use "../Base/mixins" as *;
+
+.game {
+  
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-white;
+  
+  
+  
+}
