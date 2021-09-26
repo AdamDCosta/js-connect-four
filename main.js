@@ -6,10 +6,11 @@ const startPage = document.querySelector("header");
 
 const gameArea = document.querySelector(".game__area");
 
-const gridHTML = document.querySelectorAll(".game__area--cell");
+const gridHTML = document.querySelectorAll(".square");
 
-const gridArray = Array.from(gridHTML)
-console.log(gridArray[48])
+console.log(gridHTML)
+
+// console.log(gridArray[48])
 
 const restart = document.querySelector(".game__reset");
 
@@ -46,49 +47,56 @@ class Game {
   //   }
   // }
 
-  // createArray(cells) {
-  //   const gridArray = Array.from(this.cells)
-  //   console.log(gridArray)
-  // }
+
 
   playerTurn() {
-    this.cells.forEach(gridCell => {
-      gridCell.addEventListener("click", () => {
+    const cellsArray = Array.from(gridHTML)
+    console.log(cellsArray)
+    for ( let i = 0; i < cellsArray.length; i++) {
+      cellsArray[i].addEventListener("click", (event) => {
+        event.preventDefault();
+        console.log(cellsArray[i])
+        // if (cellsArray[i].classList != "game__area--cell") {
+        //   console.log(cellsArray[i])
+        //   return;
+        // }
+        // else if (cellsArray[i + 7].classList.contains("cell") ) {
+        //   return;
+        // }
+
+        if (!cellsArray[i + 7].classList.contains('taken')) {
+          return;
+        }
+
+        else {
+
+          if (this.isPlayerOnesTurn )  {
+            cellsArray[i].classList.remove("game__area--cell")
+            cellsArray[i].classList.add("game__area--playerone")
+            cellsArray[i].classList.add("taken")
+            console.log(cellsArray[i])
+            this.isPlayerOnesTurn = false;
+            this.isPlayerTwosTurn = true;
+            gamePlayer.innerHTML = "Player Two"
+          }
         
-        // console.log("boom")
-        this.handlePlayersTurn(gridCell)
+          else {
+            cellsArray[i].classList.remove("game__area--cell")
+            cellsArray[i].classList.add("game__area--playertwo")
+            cellsArray[i].classList.add("taken")
+              this.isPlayerOnesTurn = true;
+              this.isPlayerTwosTurn = false;
+              gamePlayer.innerHTML = "Player One"
+          }
         // this.checkWin();
-        })
+        }
     })
   }
 
-  handlePlayersTurn(clickedCell) {
-
-    if (clickedCell.classList != "game__area--cell") {
-      console.log(clickedCell)
-      return;
-    }
   
-    
-    if (this.isPlayerOnesTurn )  {
-      clickedCell.classList.remove("game__area--cell")
-      clickedCell.classList.add("game__area--playerone")
-      console.log(clickedCell)
-      this.isPlayerOnesTurn = false;
-      this.isPlayerTwosTurn = true;
-      gamePlayer.innerHTML = "Player Two"
-    }
 
-    else {
-      clickedCell.classList.remove("game__area--cell")
-      clickedCell.classList.add("game__area--playertwo")
-        this.isPlayerOnesTurn = true;
-        this.isPlayerTwosTurn = false;
-        gamePlayer.innerHTML = "Player One"
-      
-    }
+} 
   
-  }
 }
 
 const game = new Game(gridHTML)
@@ -97,5 +105,5 @@ const game = new Game(gridHTML)
 
 game.startGame();
 
-game.playerTurn()
+game.playerTurn();
 
