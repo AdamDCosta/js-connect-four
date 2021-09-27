@@ -131,8 +131,13 @@ class Game {
             return alert("Player One wins!")
       } 
 
+      if (this.cellsArray[i].classList.contains("game__area--playertwo") && 
+          this.cellsArray[i + 1].classList.contains("game__area--playertwo") &&
+          this.cellsArray[i + 2].classList.contains("game__area--playertwo") &&
+          this.cellsArray[i + 3].classList.contains("game__area--playertwo")) {
+            return alert("Player Two wins!")
+      }
 
-      
   }
 
 
