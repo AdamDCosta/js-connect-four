@@ -102,7 +102,14 @@ class Game {
   checkWin() {
 
     for ( let i = 0; i < this.cellsArray.length; i++) {
-      if 
+      // check horizontal win for playerone
+      if (this.cellsArray[i].classList.contains("game__area--playerone") && 
+          this.cellsArray[i + 1].classList.contains("game__area--playerone") &&
+          this.cellsArray[i + 2].classList.contains("game__area--playerone") &&
+          this.cellsArray[i + 3].classList.contains("game__area--playerone")) {
+            return alert("Player One wins!")
+
+      }
 
   }
 
