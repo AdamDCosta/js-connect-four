@@ -108,8 +108,21 @@ class Game {
           this.cellsArray[i + 2].classList.contains("game__area--playerone") &&
           this.cellsArray[i + 3].classList.contains("game__area--playerone")) {
             return alert("Player One wins!")
-
       }
+      // check vertical win for playerone
+      else if (this.cellsArray[i].classList.contains("game__area--playerone") && 
+          this.cellsArray[i + 7].classList.contains("game__area--playerone") &&
+          this.cellsArray[i + 14].classList.contains("game__area--playerone") &&
+          this.cellsArray[i + 21].classList.contains("game__area--playerone")) {
+            return alert("Player One wins!")
+      }
+
+      else if (this.cellsArray[i].classList.contains("game__area--playerone") && 
+          this.cellsArray[i + 8].classList.contains("game__area--playerone") &&
+          this.cellsArray[i + 14].classList.contains("game__area--playerone") &&
+          this.cellsArray[i + 21].classList.contains("game__area--playerone")) {
+            return alert("Player One wins!")
+      } 
 
   }
 
