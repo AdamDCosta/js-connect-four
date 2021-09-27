@@ -34,18 +34,20 @@
 }
 
 .intro__heading {
-  font-family: "Bungee Shade", cursive;
+  font-family: "Monoton", cursive;
   color: #00A19D;
   font-size: 4rem;
   transform: rotate(-30deg);
   text-align: center;
   line-height: 1;
+  padding-top: 20px;
 }
 .intro__desc {
   font-family: "Bungee", cursive;
   color: #FFB344;
   text-align: center;
   line-height: 1.75;
+  max-width: 80%;
 }
 
 .intro__button {
@@ -75,10 +77,13 @@
   font-family: "Bungee", cursive;
 }
 
+.game {
+  padding-top: 20px;
+}
 .game__heading {
-  font-family: "Bungee Shade", cursive;
+  font-family: "Monoton", cursive;
   color: #00A19D;
-  padding: 20px auto;
+  font-size: 2rem;
 }
 .game__area {
   display: grid;
@@ -105,8 +110,9 @@
 }
 .game__current-player {
   font-family: "Bungee", cursive;
-  color: #00A19D;
+  color: #FFB344;
   padding: 20px auto;
+  font-size: 2rem;
 }
 
 .game__area div {

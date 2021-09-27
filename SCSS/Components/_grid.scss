@@ -9,10 +9,13 @@
 
 .game {
 
+  padding-top: 20px;
+
   &__heading {
-    font-family: $font-intro;
+    font-family: $font-alt;
     color: $color-teal;
-    padding: 20px auto;
+    font-size: 2rem;
+    // padding: 20px auto;
   }
   
   &__area {
@@ -56,8 +59,9 @@
   
   &__current-player {
     font-family: $font-text;
-    color: $color-teal;
+    color: $color-orange;
     padding: 20px auto;
+    font-size: 2rem;
   }
   
 }

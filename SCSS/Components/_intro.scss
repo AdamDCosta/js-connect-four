@@ -5,12 +5,13 @@
   
   
   &__heading {
-    font-family: $font-intro;
+    font-family: $font-alt;
     color: $color-teal;
     font-size: 4rem;
     transform: rotate(-30deg);
     text-align: center;
     line-height: 1;
+    padding-top: 20px;
     
   }
   
@@ -20,6 +21,7 @@
     color: $color-orange;
     text-align: center;
     line-height: 1.75;
+    max-width: 80%;
   }
   
   
