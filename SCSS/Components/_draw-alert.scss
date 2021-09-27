@@ -1,0 +1,25 @@
+@use "../Base/variables" as *;
+@use "../Base/mixins" as *;
+
+.game-draw {
+  display: none;
+}
+
+.game-draw__active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90vh;
+  width: 90%;
+  background-color: $color-teal;
+  border: 2px solid $color-orange;
+  position: absolute;
+  top: 30px;
+  font-family: $font-alt;
+  color: $color-white;
+  font-size: 2rem;
+  text-align: center;
+
+  
+}
