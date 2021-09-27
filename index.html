@@ -18,7 +18,7 @@
 
   <main class="game">
     <h2 class="game__heading">Connect Four</h2>
-    <div class="game__area">
+    <section class="game__area">
       <div class="game__area--cell square"></div>
       <div class="game__area--cell square"></div>
       <div class="game__area--cell square"></div>
@@ -69,9 +69,15 @@
       <div class="game__area--block square taken"></div>
       <div class="game__area--block square taken"></div>
       
-    </div>
+    </section>
     <p class="game__current-player"><span class="game__player"></span> to go</p>
     <button class="game__reset">Start Again</button>
+
+    <section class="game-end">
+      <h2><span class="game__player"></span> Wins!</h2>
+      <button class="game__reset">Start Again</button>
+    </section>
+
   </main>
   <script src="./main.js"></script>
 </body>
