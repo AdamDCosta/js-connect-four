@@ -21,6 +21,7 @@ class Game {
     this.cells = cells;
     this.isPlayerOnesTurn = true;
     this.isPlayerTwosTurn = false;
+    this.cellsArray = Array.from(gridHTML)
   }
 
   startGame() {
@@ -50,53 +51,127 @@ class Game {
 
 
   playerTurn() {
-    const cellsArray = Array.from(gridHTML)
-    console.log(cellsArray)
-    for ( let i = 0; i < cellsArray.length; i++) {
-      cellsArray[i].addEventListener("click", (event) => {
+    // const cellsArray = Array.from(gridHTML)
+    console.log(this.cellsArray)
+    for ( let i = 0; i < this.cellsArray.length; i++) {
+      this.cellsArray[i].addEventListener("click", (event) => {
         event.preventDefault();
-        console.log(cellsArray[i])
-        // if (cellsArray[i].classList != "game__area--cell") {
-        //   console.log(cellsArray[i])
-        //   return;
-        // }
-        // else if (cellsArray[i + 7].classList.contains("cell") ) {
-        //   return;
-        // }
-
-        if (!cellsArray[i + 7].classList.contains('taken')) {
+        console.log(this.cellsArray[i])
+        
+        if (!this.cellsArray[i + 7].classList.contains('taken')) {
           return;
         }
 
         else {
 
           if (this.isPlayerOnesTurn )  {
-            cellsArray[i].classList.remove("game__area--cell")
-            cellsArray[i].classList.add("game__area--playerone")
-            cellsArray[i].classList.add("taken")
-            console.log(cellsArray[i])
-            this.isPlayerOnesTurn = false;
-            this.isPlayerTwosTurn = true;
-            gamePlayer.innerHTML = "Player Two"
+            if (this.cellsArray[i].classList.contains('taken')) {
+              return;
+            }
+            else {
+              this.cellsArray[i].classList.remove("game__area--cell")
+              this.cellsArray[i].classList.add("game__area--playerone")
+              this.cellsArray[i].classList.add("taken")
+              console.log(this.cellsArray[i])
+              this.isPlayerOnesTurn = false;
+              this.isPlayerTwosTurn = true;
+              gamePlayer.innerHTML = "Player Two"
+
+            }
           }
         
           else {
-            cellsArray[i].classList.remove("game__area--cell")
-            cellsArray[i].classList.add("game__area--playertwo")
-            cellsArray[i].classList.add("taken")
-              this.isPlayerOnesTurn = true;
-              this.isPlayerTwosTurn = false;
-              gamePlayer.innerHTML = "Player One"
+            if (this.isPlayerTwosTurn )  {
+              if (this.cellsArray[i].classList.contains('taken')) {
+                return;
+              }
+            else {
+              this.cellsArray[i].classList.remove("game__area--cell")
+              this.cellsArray[i].classList.add("game__area--playertwo")
+              this.cellsArray[i].classList.add("taken")
+                this.isPlayerOnesTurn = true;
+                this.isPlayerTwosTurn = false;
+                gamePlayer.innerHTML = "Player One"
+            }}
           }
-        // this.checkWin();
+        this.checkWin();
+      }})
+    }
+  } 
+  
+  checkWin() {
+
+    for ( let i = 0; i < this.cellsArray.length; i++) {
+      
+      if (this.isPlayerTwosTurn) {
+        // check horizontal win for playerone
+        if (this.cellsArray[i].classList.contains("game__area--playerone") && 
+            this.cellsArray[i + 1].classList.contains("game__area--playerone") &&
+            this.cellsArray[i + 2].classList.contains("game__area--playerone") &&
+            this.cellsArray[i + 3].classList.contains("game__area--playerone")) {
+              return alert("Player One wins!")
         }
-    })
+        // check vertical win for playerone
+        else if (this.cellsArray[i].classList.contains("game__area--playerone") && 
+            this.cellsArray[i + 7].classList.contains("game__area--playerone") &&
+            this.cellsArray[i + 14].classList.contains("game__area--playerone") &&
+            this.cellsArray[i + 21].classList.contains("game__area--playerone")) {
+              return alert("Player One wins!")
+        }
+        // check diagonal (left to right) win for playerone
+        else if (this.cellsArray[i].classList.contains("game__area--playerone") && 
+            this.cellsArray[i + 8].classList.contains("game__area--playerone") &&
+            this.cellsArray[i + 16].classList.contains("game__area--playerone") &&
+            this.cellsArray[i + 24].classList.contains("game__area--playerone")) {
+              return alert("Player One wins!")
+        } 
+        // check diagonal (right to left) win for playerone
+        else if (this.cellsArray[i].classList.contains("game__area--playerone") && 
+            this.cellsArray[i + 6].classList.contains("game__area--playerone") &&
+            this.cellsArray[i + 12].classList.contains("game__area--playerone") &&
+            this.cellsArray[i + 18].classList.contains("game__area--playerone")) {
+              return alert("Player One wins!")
+        }
+      }
+        
+      if (this.isPlayerOnesTurn) {
+        // check horizontal win for playertwo
+        if (this.cellsArray[i].classList.contains("game__area--playertwo") && 
+            this.cellsArray[i + 1].classList.contains("game__area--playertwo") &&
+            this.cellsArray[i + 2].classList.contains("game__area--playertwo") &&
+            this.cellsArray[i + 3].classList.contains("game__area--playertwo")) {
+              return alert("Player Two wins!")
+        }
+        // check vertical win for playertwo
+        else if (this.cellsArray[i].classList.contains("game__area--playertwo") && 
+            this.cellsArray[i + 7].classList.contains("game__area--playertwo") &&
+            this.cellsArray[i + 14].classList.contains("game__area--playertwo") &&
+            this.cellsArray[i + 21].classList.contains("game__area--playertwo")) {
+              return alert("Player Two wins!")
+        }
+        // check diagonal (left to right) win for playertwo
+        else if (this.cellsArray[i].classList.contains("game__area--playertwo") && 
+            this.cellsArray[i + 8].classList.contains("game__area--playertwo") &&
+            this.cellsArray[i + 16].classList.contains("game__area--playertwo") &&
+            this.cellsArray[i + 24].classList.contains("game__area--playertwo")) {
+              return alert("Player Two wins!")
+        }
+  
+        // check diagonal (right to left) win for playertwo
+        else if (this.cellsArray[i].classList.contains("game__area--playertwo") && 
+            this.cellsArray[i + 6].classList.contains("game__area--playertwo") &&
+            this.cellsArray[i + 12].classList.contains("game__area--playertwo") &&
+            this.cellsArray[i + 18].classList.contains("game__area--playertwo")) {
+              return alert("Player Two wins!")
+        }
+      }
+      
+
   }
 
-  
 
-} 
-  
+}
+
 }
 
 const game = new Game(gridHTML)
