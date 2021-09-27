@@ -20,6 +20,8 @@ const gameWinner = document.querySelector(".game__winner")
 
 const winAlert = document.querySelector(".game-end")
 
+const drawAlert = document.querySelector(".game-draw")
+
 
 
 class Game {
@@ -101,6 +103,7 @@ class Game {
             }}
           }
         this.checkWin();
+        this.checkDraw();
       }})
     }
   } 
@@ -199,7 +202,7 @@ class Game {
     }
 
     if (isDraw) {
-      
+      drawAlert.classList.toggle(".game-draw__active")
     }
   }  
 

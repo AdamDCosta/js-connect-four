@@ -143,3 +143,24 @@
   font-size: 2rem;
   text-align: center;
 }
+
+.game-draw {
+  display: none;
+}
+
+.game-draw__active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90vh;
+  width: 90%;
+  background-color: #00A19D;
+  border: 2px solid #FFB344;
+  position: absolute;
+  top: 30px;
+  font-family: "Monoton", cursive;
+  color: #FFF8E5;
+  font-size: 2rem;
+  text-align: center;
+}
