@@ -12,7 +12,8 @@ console.log(gridHTML)
 
 // console.log(gridArray[48])
 
-const restart = document.querySelector(".game__reset");
+const restartBtns = document.getElementsByClassName("game__reset");
+console.log(restartBtns)
 
 const gamePlayer = document.querySelector(".game__player");
 
@@ -32,6 +33,8 @@ class Game {
     this.cellsArray = Array.from(gridHTML)
   }
 
+  
+
   startGame() {
     startBtn.addEventListener("click", () => {
       console.log(startPage)
@@ -48,23 +51,22 @@ class Game {
   //   gameArea.style.setProperty("grid-template-columns", "repeat(" + cols + ", 1fr)");
   //   for ( let i = 0; i < 42; i++ ) { 
   //     let cell = document.createElement("div") 
-  //     gameArea.appendChild(cell).className = "game__area--cell game__area--cell" + i;
+  //     gameArea.appendChild(cell).className = "game__area--cell square;
   //   }
   //   for ( let i = 0; i >= 42; i++ ) {
   //     let cell = document.createElement("div") 
-  //     gameArea.appendChild(cell).className = "game__area--taken game__area--taken" + i;
+  //     gameArea.appendChild(cell).className = "game__area--block square taken;
   //   }
   // }
 
 
 
   playerTurn() {
-    // const cellsArray = Array.from(gridHTML)
-    console.log(this.cellsArray)
+    
     for ( let i = 0; i < this.cellsArray.length; i++) {
       this.cellsArray[i].addEventListener("click", (event) => {
         event.preventDefault();
-        console.log(this.cellsArray[i])
+        
         
         if (!this.cellsArray[i + 7].classList.contains('taken')) {
           return;
@@ -206,14 +208,54 @@ class Game {
     }
   }  
 
+  reset() {
+  
+    for ( let i = 0; i < restartBtns.length; i++) {
+      restartBtns[i].addEventListener("click", () => {
+        // console.log("hi")
+        
+        for ( let j = 0; j < 42; j++) {
+            if (winAlert.classList.contains("game-end")) {
+            this.cellsArray[j].classList.remove("game__area--playerone") 
+            this.cellsArray[j].classList.remove("game__area--playertwo")
+            this.cellsArray[j].classList.remove("taken")
+            this.cellsArray[j].classList.add("game__area--cell") 
+            
+          }
+          if (winAlert.classList.contains("game-end__active")) {
+            winAlert.classList.toggle("game-end__active")
+            // drawAlert.classList.toggle(".game-draw__active")
+            this.cellsArray[j].classList.remove("game__area--playerone") 
+            this.cellsArray[j].classList.remove("game__area--playertwo")
+            this.cellsArray[j].classList.remove("taken")
+            this.cellsArray[j].classList.add("game__area--cell") 
+            }
+
+            if (drawAlert.classList.contains("game-end__active")) {
+
+              drawAlert.classList.toggle(".game-draw__active")
+              this.cellsArray[j].classList.remove("game__area--playerone") 
+              this.cellsArray[j].classList.remove("game__area--playertwo")
+              this.cellsArray[j].classList.remove("taken")
+              this.cellsArray[j].classList.add("game__area--cell")   
+            }
+        }
+    
+      }) 
+    }
+  }  
 }
 
 const game = new Game(gridHTML)
 
 
+game.reset();
 
 game.startGame();
 
 game.playerTurn();
 
+game.checkWin();
+
 game.checkDraw();
+
