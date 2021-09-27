@@ -16,7 +16,9 @@ const restart = document.querySelector(".game__reset");
 
 const gamePlayer = document.querySelector(".game__player");
 
+const gameWinner = document.querySelector(".game__winner")
 
+const winAlert = document.querySelector(".game-end")
 
 
 
@@ -104,9 +106,7 @@ class Game {
   } 
   
   checkWin() {
-    const gameWinner = document.querySelector(".game__winner")
-
-    const winAlert = document.querySelector(".game-end")
+    
 
     for ( let i = 0; i < this.cellsArray.length; i++) {
       
@@ -182,12 +182,26 @@ class Game {
               winAlert.classList.toggle("game-end__active")
         }
       }
-      
-
+    }
   }
 
+  checkDraw() {
+    let isDraw = false
+    for ( let i = 0; i < this.cellsArray.length; i++) {
+      if (!this.cellsArray[i].classList.contains("taken")) {
+        isDraw = false;
+        break;
+      }
 
-}
+      else {
+        isDraw = true;
+      }
+    }
+
+    if (isDraw) {
+      
+    }
+  }  
 
 }
 
@@ -199,3 +213,4 @@ game.startGame();
 
 game.playerTurn();
 
+game.checkDraw();
