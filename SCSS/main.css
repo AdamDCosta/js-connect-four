@@ -30,6 +30,7 @@
   flex-direction: column;
   align-items: center;
   background-color: #FFF8E5;
+  position: relative;
 }
 
 .intro__heading {
@@ -117,12 +118,22 @@
 }
 
 .game-end {
+  display: none;
+}
+
+.game-end__active {
   display: flex;
   flex-direction: column;
-  height: 60vh;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90vh;
   width: 90%;
-}
-.game-end__heading {
+  background-color: #00A19D;
+  border: 2px solid #FFB344;
+  position: absolute;
+  top: 30px;
   font-family: "Monoton", cursive;
-  color: #00A19D;
+  color: #FFF8E5;
+  font-size: 2rem;
+  text-align: center;
 }

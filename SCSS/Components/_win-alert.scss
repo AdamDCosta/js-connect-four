@@ -2,17 +2,24 @@
 @use "../Base/mixins" as *; 
 
 .game-end {
-  display: flex;
-  flex-direction: column;
-  height: 60vh;
-  width: 90%;
-
-  &__heading {
-    font-family: $font-alt;
-    color: $color-teal;
-  }
+  display: none;
 }
 
 .game-end__active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90vh;
+  width: 90%;
+  background-color: $color-teal;
+  border: 2px solid $color-orange;
+  position: absolute;
+  top: 30px;
+  font-family: $font-alt;
+  color: $color-white;
+  font-size: 2rem;
+  text-align: center;
+
   
 }

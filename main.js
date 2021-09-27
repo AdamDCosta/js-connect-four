@@ -16,7 +16,7 @@ const restart = document.querySelector(".game__reset");
 
 const gamePlayer = document.querySelector(".game__player");
 
-const gameWinner = document.querySelector(".game__winner")
+
 
 
 
@@ -104,6 +104,9 @@ class Game {
   } 
   
   checkWin() {
+    const gameWinner = document.querySelector(".game__winner")
+
+    const winAlert = document.querySelector(".game-end")
 
     for ( let i = 0; i < this.cellsArray.length; i++) {
       
@@ -114,7 +117,9 @@ class Game {
             this.cellsArray[i + 2].classList.contains("game__area--playerone") &&
             this.cellsArray[i + 3].classList.contains("game__area--playerone")) {
               gameWinner.innerHTML = "Player One";
-              return alert("Player One wins!")
+              winAlert.classList.remove("game-end")
+              winAlert.classList.add("game-end__active")
+              // return alert("Player One wins!")
         }
         // check vertical win for playerone
         else if (this.cellsArray[i].classList.contains("game__area--playerone") && 
