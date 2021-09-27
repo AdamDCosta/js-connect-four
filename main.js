@@ -116,11 +116,11 @@ class Game {
           this.cellsArray[i + 21].classList.contains("game__area--playerone")) {
             return alert("Player One wins!")
       }
-
+      // check horizontal (left to right) win for playerone
       else if (this.cellsArray[i].classList.contains("game__area--playerone") && 
           this.cellsArray[i + 8].classList.contains("game__area--playerone") &&
-          this.cellsArray[i + 14].classList.contains("game__area--playerone") &&
-          this.cellsArray[i + 21].classList.contains("game__area--playerone")) {
+          this.cellsArray[i + 16].classList.contains("game__area--playerone") &&
+          this.cellsArray[i + 24].classList.contains("game__area--playerone")) {
             return alert("Player One wins!")
       } 
 
