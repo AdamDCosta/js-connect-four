@@ -16,6 +16,10 @@ const restart = document.querySelector(".game__reset");
 
 const gamePlayer = document.querySelector(".game__player");
 
+const gameWinner = document.querySelector(".game__winner")
+
+
+
 class Game {
   constructor(cells) {
     this.cells = cells;
@@ -109,6 +113,7 @@ class Game {
             this.cellsArray[i + 1].classList.contains("game__area--playerone") &&
             this.cellsArray[i + 2].classList.contains("game__area--playerone") &&
             this.cellsArray[i + 3].classList.contains("game__area--playerone")) {
+              gameWinner.innerHTML = "Player One";
               return alert("Player One wins!")
         }
         // check vertical win for playerone
@@ -116,6 +121,7 @@ class Game {
             this.cellsArray[i + 7].classList.contains("game__area--playerone") &&
             this.cellsArray[i + 14].classList.contains("game__area--playerone") &&
             this.cellsArray[i + 21].classList.contains("game__area--playerone")) {
+              gameWinner.innerHTML = "Player One";
               return alert("Player One wins!")
         }
         // check diagonal (left to right) win for playerone
@@ -123,6 +129,7 @@ class Game {
             this.cellsArray[i + 8].classList.contains("game__area--playerone") &&
             this.cellsArray[i + 16].classList.contains("game__area--playerone") &&
             this.cellsArray[i + 24].classList.contains("game__area--playerone")) {
+              gameWinner.innerHTML = "Player One";
               return alert("Player One wins!")
         } 
         // check diagonal (right to left) win for playerone
@@ -130,6 +137,7 @@ class Game {
             this.cellsArray[i + 6].classList.contains("game__area--playerone") &&
             this.cellsArray[i + 12].classList.contains("game__area--playerone") &&
             this.cellsArray[i + 18].classList.contains("game__area--playerone")) {
+              gameWinner.innerHTML = "Player One";
               return alert("Player One wins!")
         }
       }
@@ -140,6 +148,7 @@ class Game {
             this.cellsArray[i + 1].classList.contains("game__area--playertwo") &&
             this.cellsArray[i + 2].classList.contains("game__area--playertwo") &&
             this.cellsArray[i + 3].classList.contains("game__area--playertwo")) {
+              gameWinner.innerHTML = "Player Two";
               return alert("Player Two wins!")
         }
         // check vertical win for playertwo
@@ -147,6 +156,7 @@ class Game {
             this.cellsArray[i + 7].classList.contains("game__area--playertwo") &&
             this.cellsArray[i + 14].classList.contains("game__area--playertwo") &&
             this.cellsArray[i + 21].classList.contains("game__area--playertwo")) {
+              gameWinner.innerHTML = "Player Two";
               return alert("Player Two wins!")
         }
         // check diagonal (left to right) win for playertwo
@@ -154,6 +164,7 @@ class Game {
             this.cellsArray[i + 8].classList.contains("game__area--playertwo") &&
             this.cellsArray[i + 16].classList.contains("game__area--playertwo") &&
             this.cellsArray[i + 24].classList.contains("game__area--playertwo")) {
+              gameWinner.innerHTML = "Player Two";
               return alert("Player Two wins!")
         }
   
@@ -162,6 +173,7 @@ class Game {
             this.cellsArray[i + 6].classList.contains("game__area--playertwo") &&
             this.cellsArray[i + 12].classList.contains("game__area--playertwo") &&
             this.cellsArray[i + 18].classList.contains("game__area--playertwo")) {
+              gameWinner.innerHTML = "Player Two";
               return alert("Player Two wins!")
         }
       }

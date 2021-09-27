@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -113,4 +114,15 @@
   align-items: center;
   border: 1px solid #00A19D;
   border-radius: 50%;
+}
+
+.game-end {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  width: 90%;
+}
+.game-end__heading {
+  font-family: "Monoton", cursive;
+  color: #00A19D;
 }
