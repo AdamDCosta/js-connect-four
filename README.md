@@ -6,9 +6,8 @@ A game written with vanilla javascript, styled with SCSS and using BEM naming co
 
 Get a row, column or diagonal of four tokens before your opponent.
 
-![Connect Four Homepage](https://github.com/AdamDCosta/js-connect-four/blob/main/Assets/Connect-four-homepage.JPG?raw=true "Connect Four Homepage")
 
-![Connect Four Game Board](/assets/connect-four-gameboard.jpg "Connect Four Game Board")
+![Connect Four Game Board](https://github.com/AdamDCosta/js-connect-four/blob/main/Assets/connect-four-gameboard.JPG?raw=true "Connect Four Game Board")
 
 
 
