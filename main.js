@@ -208,7 +208,7 @@ class Game {
     }
   }  
 
-  
+
   reset() {
   
     for ( let i = 0; i < restartBtns.length; i++) {
