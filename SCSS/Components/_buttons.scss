@@ -36,4 +36,27 @@
     font-size: 3rem;
     margin-bottom: 10px;
   }
+
+
+}
+
+.game__quit {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  background-color: $color-orange;
+  color: $color-white;
+  font-family: $font-text;
+
+  @include tablet {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  
+}
+
+.game__buttons {
+  display: flex;
+
 }

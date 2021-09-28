@@ -47,7 +47,7 @@
     &--playerone {
       background-color: $color-red;
       animation: bounce-in-top 1.1s both;
-      z-index: 1;
+      
     }
 
     &--playertwo {
@@ -177,6 +177,12 @@
     @include tablet {
       font-size: 3rem;
     }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 95%;
   }
   
 }

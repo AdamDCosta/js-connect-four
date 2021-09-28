@@ -225,6 +225,25 @@
   }
 }
 
+.game__quit {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  background-color: #FFB344;
+  color: #FFF8E5;
+  font-family: "Bungee", cursive;
+}
+@media (min-width: 768px) {
+  .game__quit {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+}
+
+.game__buttons {
+  display: flex;
+}
+
 .game {
   padding-top: 20px;
 }
@@ -259,7 +278,6 @@
 .game__area--playerone {
   background-color: #E05D5D;
   animation: bounce-in-top 1.1s both;
-  z-index: 1;
 }
 .game__area--playertwo {
   background-color: #FFB344;
@@ -385,6 +403,11 @@
     font-size: 3rem;
   }
 }
+.game__buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 95%;
+}
 
 .game__area div {
   display: flex;
@@ -420,6 +443,13 @@
   }
 }
 
+.game-end__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 40vh;
+}
+
 .game-draw {
   display: none;
 }
@@ -444,4 +474,11 @@
   .game-draw__active {
     font-size: 3rem;
   }
+}
+
+.game-draw__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 40vh;
 }
