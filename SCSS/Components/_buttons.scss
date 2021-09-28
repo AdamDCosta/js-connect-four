@@ -28,4 +28,9 @@
   background-color: $color-red;
   color: $color-white;
   font-family: $font-text;
+
+  @include tablet {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
 }

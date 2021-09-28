@@ -96,6 +96,12 @@
   color: #FFF8E5;
   font-family: "Bungee", cursive;
 }
+@media (min-width: 768px) {
+  .game__reset {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+}
 
 .game {
   padding-top: 20px;
@@ -104,6 +110,11 @@
   font-family: "Monoton", cursive;
   color: #00A19D;
   font-size: 2rem;
+}
+@media (min-width: 768px) {
+  .game__heading {
+    font-size: 4rem;
+  }
 }
 .game__area {
   display: grid;
@@ -133,6 +144,11 @@
   color: #FFB344;
   padding: 20px auto;
   font-size: 2rem;
+}
+@media (min-width: 768px) {
+  .game__current-player {
+    font-size: 3rem;
+  }
 }
 
 .game__area div {

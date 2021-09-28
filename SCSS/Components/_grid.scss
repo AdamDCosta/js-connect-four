@@ -16,6 +16,10 @@
     color: $color-teal;
     font-size: 2rem;
     // padding: 20px auto;
+
+    @include tablet {
+      font-size: 4rem;
+    }
   }
   
   &__area {
@@ -62,6 +66,10 @@
     color: $color-orange;
     padding: 20px auto;
     font-size: 2rem;
+
+    @include tablet {
+      font-size: 3rem;
+    }
   }
   
 }
