@@ -245,17 +245,42 @@ class Game {
     }
   }  
 
-  // quitTheGame () {
-  //   for ( let i = 0; i < quitBtns.length; i++) {
-  //     quitBtns[i].addEventListener("click", () => {
-  //       console.log("hi")
-  //       startPage.classList.add("intro")
-  //       startPage.classList.remove("hide-intro")
+  quitTheGame () {
+    for ( let i = 0; i < quitBtns.length; i++) {
+      quitBtns[i].addEventListener("click", () => {
+        console.log("hi")
+        startPage.classList.add("intro")
+        startPage.classList.remove("hide-intro")
+
+        for ( let j = 0; j < 42; j++) {
+          if (winAlert.classList.contains("game-end")) {
+          this.cellsArray[j].classList.remove("game__area--playerone") 
+          this.cellsArray[j].classList.remove("game__area--playertwo")
+          this.cellsArray[j].classList.remove("taken")
+          this.cellsArray[j].classList.add("game__area--cell") 
+          
+          }
+          if (winAlert.classList.contains("game-end__active")) {
+            winAlert.classList.toggle("game-end__active")
+            this.cellsArray[j].classList.remove("game__area--playerone") 
+            this.cellsArray[j].classList.remove("game__area--playertwo")
+            this.cellsArray[j].classList.remove("taken")
+            this.cellsArray[j].classList.add("game__area--cell") 
+          }
+
+          if (drawAlert.classList.contains("game-end__active")) {
+            drawAlert.classList.toggle(".game-draw__active")
+            this.cellsArray[j].classList.remove("game__area--playerone") 
+            this.cellsArray[j].classList.remove("game__area--playertwo")
+            this.cellsArray[j].classList.remove("taken")
+            this.cellsArray[j].classList.add("game__area--cell")   
+          }
+      }
         
-  //     }
-  //   )}  
-  //   this.reset();
-  // }
+      }
+    )}  
+    
+  }
 }
 
 
@@ -265,7 +290,7 @@ const game = new Game(gridHTML)
 
 game.reset();
 
-// game.quitTheGame();
+game.quitTheGame();
 
 game.startGame();
 
