@@ -179,6 +179,11 @@
   font-size: 2rem;
   text-align: center;
 }
+@media (min-width: 768px) {
+  .game-end__active {
+    font-size: 3rem;
+  }
+}
 
 .game-draw {
   display: none;
