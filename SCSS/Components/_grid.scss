@@ -15,7 +15,6 @@
     font-family: $font-alt;
     color: $color-teal;
     font-size: 2rem;
-    // padding: 20px auto;
 
     @include tablet {
       font-size: 4rem;
@@ -38,29 +37,23 @@
   
     &--cell {
       background-color: $color-white;
-      
-      
     } 
 
     &--block {
       background-color: $color-teal;
-      
     }
 
     &--playerone {
-      
       background-color: $color-red;
     }
     
     &--playertwo {
-      
       background-color: $color-orange;
     }
 
     @include tablet {
       max-width: 996px;
     }
-
 
   }
 
