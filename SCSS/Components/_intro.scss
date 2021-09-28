@@ -11,7 +11,12 @@
     transform: rotate(-30deg);
     text-align: center;
     line-height: 1;
-    padding-top: 20px;
+    padding: 20px;
+    margin: 20px auto;
+
+    @include tablet {
+      font-size: 6rem;
+    }
     
   }
   
@@ -20,8 +25,17 @@
     font-family: $font-text;
     color: $color-orange;
     text-align: center;
-    line-height: 1.75;
+    line-height: 1.5;
     max-width: 80%;
+    font-size: 0.9rem;
+
+    span {
+      color: $color-red;
+    }
+
+    @include tablet {
+      font-size: 1.3rem;
+    }
   }
   
   

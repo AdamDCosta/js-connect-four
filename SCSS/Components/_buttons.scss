@@ -9,6 +9,11 @@
   color: $color-white;
   font-family: $font-text;
   animation: pulse 3s infinite;
+
+  @include tablet {
+    font-size: 3rem;
+
+  }
 }
 
 @keyframes pulse {

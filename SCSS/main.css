@@ -11,7 +11,7 @@
 .intro {
   width: 100%;
   height: 100vh;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -40,14 +40,29 @@
   transform: rotate(-30deg);
   text-align: center;
   line-height: 1;
-  padding-top: 20px;
+  padding: 20px;
+  margin: 20px auto;
+}
+@media (min-width: 768px) {
+  .intro__heading {
+    font-size: 6rem;
+  }
 }
 .intro__desc {
   font-family: "Bungee", cursive;
   color: #FFB344;
   text-align: center;
-  line-height: 1.75;
+  line-height: 1.5;
   max-width: 80%;
+  font-size: 0.9rem;
+}
+.intro__desc span {
+  color: #E05D5D;
+}
+@media (min-width: 768px) {
+  .intro__desc {
+    font-size: 1.3rem;
+  }
 }
 
 .intro__button {
@@ -58,6 +73,11 @@
   color: #FFF8E5;
   font-family: "Bungee", cursive;
   animation: pulse 3s infinite;
+}
+@media (min-width: 768px) {
+  .intro__button {
+    font-size: 3rem;
+  }
 }
 
 @keyframes pulse {
