@@ -8,8 +8,8 @@
   background-color: $color-red;
   color: $color-white;
   font-family: $font-text;
-  animation: pulse 3s infinite;
-
+  animation: pulse 1s infinite;
+  
   @include tablet {
     font-size: 3rem;
 
@@ -20,6 +20,9 @@
   0% {background-color: $color-orange;}
   100% {background-color: $color-red}
 }
+
+
+
 
 .game__reset {
   padding: 10px 20px;
