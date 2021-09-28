@@ -56,7 +56,7 @@
     }
 
     @include tablet {
-      max-width: 996px;
+      max-width: 800px;
     }
 
 
@@ -183,7 +183,12 @@
     display: flex;
     justify-content: space-evenly;
     width: 95%;
+    
+    @include tablet {
+      max-width: 800px;
+    } 
   }
+
   
 }
 
