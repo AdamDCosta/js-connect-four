@@ -6,12 +6,9 @@ const startPage = document.querySelector("header");
 
 const gameArea = document.querySelector(".game__area");
 
-
 const gridHTML = document.querySelectorAll(".square");
 
-
 const restartBtns = document.getElementsByClassName("game__reset");
-console.log(restartBtns)
 
 const gamePlayer = document.querySelector(".game__player");
 
@@ -47,6 +44,8 @@ class Game {
       
     })
   }
+
+  //------couldn't manage to find a way to interact with a dynamically  created grid------//
 
   // createGrid(rows, cols){ 
   //   gameArea.style.setProperty("grid-template-rows", "repeat(" + rows + ", 1fr)");
@@ -199,12 +198,10 @@ class Game {
         isDraw = false;
         break;
       }
-
       else {
         isDraw = true;
       }
     }
-
     if (isDraw) {
       drawAlert.classList.toggle(".game-draw__active")
     }
