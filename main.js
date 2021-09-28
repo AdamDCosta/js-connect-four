@@ -12,6 +12,8 @@ const restartBtns = document.getElementsByClassName("game__reset");
 
 const gamePlayer = document.querySelector(".game__player");
 
+const gamePlayerText = document.querySelector(".game__current-player")
+
 const gameWinner = document.querySelector(".game__winner")
 
 const winAlert = document.querySelector(".game-end")
@@ -87,7 +89,7 @@ class Game {
               this.isPlayerOnesTurn = false;
               this.isPlayerTwosTurn = true;
               gamePlayer.innerHTML = "Player Two"
-
+              gamePlayerText.classList.add("game__current-player2")
             }
           }
         
@@ -103,6 +105,7 @@ class Game {
                 this.isPlayerOnesTurn = true;
                 this.isPlayerTwosTurn = false;
                 gamePlayer.innerHTML = "Player One"
+                gamePlayerText.classList.remove("game__current-player2")
             }}
           }
         this.checkWin();

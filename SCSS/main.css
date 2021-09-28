@@ -420,7 +420,7 @@
 }
 .game__current-player {
   font-family: "Bungee", cursive;
-  color: #FFB344;
+  color: #E05D5D;
   padding: 20px auto;
   font-size: 2rem;
 }
@@ -429,9 +429,13 @@
     font-size: 3rem;
   }
 }
+.game__current-player2 {
+  color: #FFB344;
+}
 .game__buttons {
   display: flex;
   justify-content: space-evenly;
+  width: 95%;
 }
 @media (min-width: 768px) {
   .game__buttons {

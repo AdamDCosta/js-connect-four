@@ -170,13 +170,17 @@
   
   &__current-player {
     font-family: $font-text;
-    color: $color-orange;
+    color: $color-red;
     padding: 20px auto;
     font-size: 2rem;
 
     @include tablet {
       font-size: 3rem;
     }
+  }
+
+  &__current-player2 {
+    color: $color-orange;
   }
 
   &__buttons {
