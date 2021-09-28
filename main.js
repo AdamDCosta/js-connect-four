@@ -21,6 +21,8 @@ const winAlert = document.querySelector(".game-end")
 
 const drawAlert = document.querySelector(".game-draw")
 
+const quitBtns = document.querySelectorAll(".game__quit")
+
 
 
 class Game {
@@ -39,8 +41,8 @@ class Game {
       startPage.classList.remove("intro")
       startPage.classList.add("hide-intro")
       gamePlayer.innerHTML = "Player One"
-      
-      this.createGrid(7, 7);
+  
+      // this.createGrid(7, 7);
       
       
     })
@@ -242,6 +244,18 @@ class Game {
       }) 
     }
   }  
+
+  // quitTheGame () {
+  //   for ( let i = 0; i < quitBtns.length; i++) {
+  //     quitBtns[i].addEventListener("click", () => {
+  //       console.log("hi")
+  //       startPage.classList.add("intro")
+  //       startPage.classList.remove("hide-intro")
+        
+  //     }
+  //   )}  
+  //   this.reset();
+  // }
 }
 
 
@@ -250,6 +264,8 @@ const game = new Game(gridHTML)
 
 
 game.reset();
+
+// game.quitTheGame();
 
 game.startGame();
 
