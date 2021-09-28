@@ -311,7 +311,7 @@
 }
 @media (min-width: 768px) {
   .game__area {
-    max-width: 800px;
+    max-width: 700px;
   }
 }
 @-webkit-keyframes bounce-in-top {
