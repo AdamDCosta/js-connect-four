@@ -64,6 +64,11 @@
     font-size: 1.3rem;
   }
 }
+@media (min-width: 1200px) {
+  .intro__desc {
+    max-width: 996px;
+  }
+}
 
 .intro__button {
   padding: 20px 40px;
@@ -139,6 +144,11 @@
 .game__area--playertwo {
   background-color: #FFB344;
 }
+@media (min-width: 768px) {
+  .game__area {
+    max-width: 996px;
+  }
+}
 .game__current-player {
   font-family: "Bungee", cursive;
   color: #FFB344;
@@ -204,4 +214,9 @@
   color: #FFF8E5;
   font-size: 2rem;
   text-align: center;
+}
+@media (min-width: 768px) {
+  .game-draw__active {
+    font-size: 3rem;
+  }
 }

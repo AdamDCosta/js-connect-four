@@ -57,6 +57,10 @@
       background-color: $color-orange;
     }
 
+    @include tablet {
+      max-width: 996px;
+    }
+
 
   }
 

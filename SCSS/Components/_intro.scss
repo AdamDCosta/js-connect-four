@@ -36,6 +36,10 @@
     @include tablet {
       font-size: 1.3rem;
     }
+
+    @include desktop {
+      max-width: 996px;
+    }
   }
   
   
