@@ -40,14 +40,14 @@ class Game {
       startPage.classList.remove("intro")
       startPage.classList.add("hide-intro")
       gamePlayer.innerHTML = "Player One"
-  
+      gamePlayerText.classList.remove("game__current-player2")
       // this.createGrid(7, 7);
       
       
     })
   }
 
-  //------couldn't manage to find a way to interact with a dynamically  created grid------//
+  //------couldn't manage to find a way to interact with a dynamically  created grid but the function below does work------//
 
   // createGrid(rows, cols){ 
   //   gameArea.style.setProperty("grid-template-rows", "repeat(" + rows + ", 1fr)");
@@ -217,27 +217,21 @@ class Game {
       restartBtns[i].addEventListener("click", () => {
         
         for ( let j = 0; j < 42; j++) {
-            if (winAlert.classList.contains("game-end")) {
-            this.cellsArray[j].classList.remove("game__area--playerone") 
-            this.cellsArray[j].classList.remove("game__area--playertwo")
-            this.cellsArray[j].classList.remove("taken")
-            this.cellsArray[j].classList.add("game__area--cell") 
+
+          this.cellsArray[j].classList.remove("game__area--playerone") 
+          this.cellsArray[j].classList.remove("game__area--playertwo")
+          this.cellsArray[j].classList.remove("taken")
+          this.cellsArray[j].classList.add("game__area--cell") 
+
             
-            }
             if (winAlert.classList.contains("game-end__active")) {
               winAlert.classList.toggle("game-end__active")
-              this.cellsArray[j].classList.remove("game__area--playerone") 
-              this.cellsArray[j].classList.remove("game__area--playertwo")
-              this.cellsArray[j].classList.remove("taken")
-              this.cellsArray[j].classList.add("game__area--cell") 
+              
             }
 
             if (drawAlert.classList.contains("game-end__active")) {
               drawAlert.classList.toggle(".game-draw__active")
-              this.cellsArray[j].classList.remove("game__area--playerone") 
-              this.cellsArray[j].classList.remove("game__area--playertwo")
-              this.cellsArray[j].classList.remove("taken")
-              this.cellsArray[j].classList.add("game__area--cell")   
+                
             }
         }
     
@@ -253,27 +247,19 @@ class Game {
         startPage.classList.remove("hide-intro")
 
         for ( let j = 0; j < 42; j++) {
-          if (winAlert.classList.contains("game-end")) {
           this.cellsArray[j].classList.remove("game__area--playerone") 
           this.cellsArray[j].classList.remove("game__area--playertwo")
           this.cellsArray[j].classList.remove("taken")
           this.cellsArray[j].classList.add("game__area--cell") 
           
-          }
           if (winAlert.classList.contains("game-end__active")) {
             winAlert.classList.toggle("game-end__active")
-            this.cellsArray[j].classList.remove("game__area--playerone") 
-            this.cellsArray[j].classList.remove("game__area--playertwo")
-            this.cellsArray[j].classList.remove("taken")
-            this.cellsArray[j].classList.add("game__area--cell") 
+            
           }
 
           if (drawAlert.classList.contains("game-end__active")) {
             drawAlert.classList.toggle(".game-draw__active")
-            this.cellsArray[j].classList.remove("game__area--playerone") 
-            this.cellsArray[j].classList.remove("game__area--playertwo")
-            this.cellsArray[j].classList.remove("taken")
-            this.cellsArray[j].classList.add("game__area--cell")   
+              
           }
       }
         
@@ -296,7 +282,7 @@ game.startGame();
 
 game.playerTurn();
 
-game.checkWin();
+setTimeout(game.checkWin(), 3000);
 
 game.checkDraw();
 
