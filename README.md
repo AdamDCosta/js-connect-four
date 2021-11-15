@@ -11,44 +11,56 @@ Get a row, column or diagonal of four tokens before your opponent.
 
 
 
-### Elements needed
+## Tech stack
 
-Intro pop-up with instructions
-Start game button
-7 x 6 Grid -> empty at start -> dynamically generated?
-Header
-x2 tokens - one for each player
-Winner alert
-Play again button
+- vanilla Javascript
+- HTML
+- Sass
 
-### How it should work
+## How it works
 
-Load page 
--> intro with instructions and start game button
-Press start game 
--> home pages disappears
-Empty 7x6 grid revealed
-Message 
--> Playerone to go first
+The functionality is contained within a class - which takes the game board's cells as the constructor. I focused on adding, removing and checking SCSS class names as the way to add tokens, check if a player can add a token to the selected cell and whether the game has been won or drawn.    
 
-Class ->
-2 players 
--> red and yellow
-Playerone goes 
--> chooses a column/grid cell which is empty and has a taken cell below it
-Method that handles moves 
--> who's turn is it 
--> which cell?
-eg -> if playerones turn -> add red token
-update who's turn
-else add a yellow token
-update who's turn
-This repeats until a winning condition is met -> or no further cells empty
-x4 red or yellow tokens horizontal
-x4 red or yellow tokens vertical
-x4 red or yellow tokens diagonal
-An array of winning combinations?
+For example checking for a horizontal win for player one:
 
+```
+checkWin() {
+    
+
+    for ( let i = 0; i < this.cellsArray.length; i++) {
+      
+      if (this.isPlayerTwosTurn) {
+        // check horizontal win for playerone
+        if (this.cellsArray[i].classList.contains("game__area--playerone") && 
+            this.cellsArray[i + 1].classList.contains("game__area--playerone") &&
+            this.cellsArray[i + 2].classList.contains("game__area--playerone") &&
+            this.cellsArray[i + 3].classList.contains("game__area--playerone")) {
+              gameWinner.innerHTML = "Player One";
+              winAlert.classList.toggle("game-end__active")
+              
+```
+
+When player one adds a token to the board that cell is given a class name of "game__area--playerone", so that I can use this to check for a win. To check for a draw:
+
+```
+  checkDraw() {
+    let isDraw = false
+    for ( let i = 0; i < this.cellsArray.length; i++) {
+      if (!this.cellsArray[i].classList.contains("taken")) {
+        isDraw = false;
+        break;
+      }
+      else {
+        isDraw = true;
+      }
+    }
+    if (isDraw) {
+      drawAlert.classList.toggle(".game-draw__active")
+    }
+  } 
+```
+
+When a player adds a token, as well as the player specific class name, I also add a "taken" class name so that after each turn the checkDraw function runs, looping through the grid and if all the cells have a "taken" class name then toggles a drawn game modal.
 
 
 
