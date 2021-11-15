@@ -1,6 +1,6 @@
 # Connect Four
 
-A game written with vanilla javascript, styled with SCSS and using BEM naming conventions
+A game written with vanilla javascript, styled with SCSS and using BEM naming conventions. Created in week five of the *_nology* web development course.
 
 ## Aim of the game
 
